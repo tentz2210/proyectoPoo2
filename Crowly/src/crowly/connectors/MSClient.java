@@ -56,40 +56,4 @@ public class MSClient implements IConstants
 		}
 	}
 		
-	public void cargarCuerpos() {
-		int videoQuantity = LISTA_VIDEOS.length;
-
-		JSONParser parser = new JSONParser();
-
-		for (int index = 0; index <= videoQuantity; index++) {
-
-			String fileName = JSON_FILENAME.replace("@@VIDEONUMBER@@", index + "");
-
-			Object obj = null;
-			try {
-				obj = parser.parse(new FileReader(fileName));
-				JSONObject data = (JSONObject) obj;
-
-				JSONArray fragments = (JSONArray) data.get("fragments");
-
-				for (Object fragmentObj : fragments) {
-					JSONObject fragment = (JSONObject) fragmentObj;
-					JSONArray events = (JSONArray) fragment.get("events");
-
-				}
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
-
-			
-
-		}
-
-		// aqui proceso el Json creando los objetos Cuerpo que vienen
-		// en el Json y los meto uno a uno en la lista de Cuerpos
-	}
 }

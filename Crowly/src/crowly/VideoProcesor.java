@@ -29,6 +29,7 @@ public class VideoProcesor implements IConstants
 				index++;
 			}
 			
+			Thread.sleep(ESPERA_ENTRE_LLAMADAS);
 			
 			for(VideoResponse video : MsClient.getVideosPendientes()) {
 				MsClient.procesarRespuestaVideo(video);
@@ -46,7 +47,11 @@ public class VideoProcesor implements IConstants
 	
 	public static void main(String args[])
 	{
-		VideoProcesor proc = new VideoProcesor();
-		proc.analizarVideos();
+		//VideoProcesor proc = new VideoProcesor();
+		//proc.analizarVideos();
+		int[] resultado = JSONDataProcessor.analyzeData();
+		for(int x : resultado){
+			System.out.println(x);
+		}
 	}
 }

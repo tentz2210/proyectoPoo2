@@ -25,9 +25,6 @@ public class HttpRequestor implements IConstants
         try
         {
             URIBuilder builder = new URIBuilder(pUrl);
-
-            
-            builder.setParameter("sensitivityLevel", "low");
             
             URI uri = builder.build();
             HttpPost request = new HttpPost(uri);
