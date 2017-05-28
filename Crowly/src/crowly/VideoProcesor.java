@@ -1,16 +1,12 @@
 package crowly;
 
-import java.util.ArrayList;
-
 import crowly.connectors.MSClient;
-import crowly.library.Cuerpo;
 import crowly.library.IConstants;
 import crowly.library.VideoResponse;
 
 public class VideoProcesor implements IConstants
 {
 	private MSClient MsClient;
-	private ArrayList<Cuerpo> CuerposTodosLosVideos;
 	
 	public VideoProcesor()
 	{
@@ -35,23 +31,9 @@ public class VideoProcesor implements IConstants
 				MsClient.procesarRespuestaVideo(video);
 				Thread.sleep(ESPERA_ENTRE_LLAMADAS);
 			}
-			
-			CuerposTodosLosVideos = MsClient.getCuerpos();
 		} catch (Exception ex)
 		{
 			ex.printStackTrace();
-		}
-	}
-	
-	
-	
-	public static void main(String args[])
-	{
-		//VideoProcesor proc = new VideoProcesor();
-		//proc.analizarVideos();
-		int[] resultado = JSONDataProcessor.analyzeData();
-		for(int x : resultado){
-			System.out.println(x);
 		}
 	}
 }

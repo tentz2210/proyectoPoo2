@@ -17,7 +17,7 @@ public class JSONDataProcessor implements IConstants {
 
 	public static int[] analyzeData() {
 		int videoQuantity = LISTA_VIDEOS.length;
-		int[] chartData = { -1, -1, -1 };
+		int[] chartData = { 0, 0, 0 };
 
 		JSONParser parser = new JSONParser();
 
@@ -49,9 +49,9 @@ public class JSONDataProcessor implements IConstants {
 
 					if (events == null) {
 						if(duracionCuerpo > 550){
-							if(duracionCuerpo > 1700)
+							if(duracionCuerpo > 2000)
 								cuerpos = 3;
-							else if(duracionCuerpo > 1150)
+							else if(duracionCuerpo > 1200)
 								cuerpos = 2;
 							else cuerpos = 1;
 						}
