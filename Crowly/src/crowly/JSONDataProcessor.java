@@ -12,12 +12,11 @@ import crowly.library.IConstants;
 
 public class JSONDataProcessor implements IConstants {
 
-	private JSONDataProcessor() {
-	}
+	private JSONDataProcessor() {}
 
 	public static int[] analyzeData() {
 		int videoQuantity = LISTA_VIDEOS.length;
-		int[] chartData = { 0, 0, 0 };
+		int[] chartData = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 		JSONParser parser = new JSONParser();
 
@@ -31,8 +30,6 @@ public class JSONDataProcessor implements IConstants {
 				JSONObject data = (JSONObject) obj;
 
 				String processingResultStr = (String) data.get("processingResult");
-
-				System.out.println(processingResultStr);
 
 				Object rObj = parser.parse(processingResultStr);
 
@@ -56,12 +53,7 @@ public class JSONDataProcessor implements IConstants {
 							else cuerpos = 1;
 						}
 						
-						if (index < 3) {
-							chartData[0]+= cuerpos;
-						} else if (index >= 3 && index < 6) {
-							chartData[1]+= cuerpos;
-						} else
-							chartData[2]+= cuerpos;
+						chartData[index] += cuerpos;
 						
 						duracionCuerpo = 0;
 						cuerpos = 0;

@@ -24,9 +24,9 @@ public class ChartManager implements IConstants{
 	public void generateChart(short option, int[] chartData){
 		String chartHTML = CHARTS[option];
 		
-		chartHTML = chartHTML.replace("@@9AM@@", chartData[0]+"");
-		chartHTML = chartHTML.replace("@@12MD@@", chartData[1]+"");
-		chartHTML = chartHTML.replace("@@3PM@@", chartData[2]+"");
+		for(short index = 0; index < chartData.length; index++){
+			chartHTML = chartHTML.replace("@@"+index+"@@", chartData[index]+"");
+		}
 		
 		try (FileWriter file = new FileWriter("CrowlyGUID.html")) {
 

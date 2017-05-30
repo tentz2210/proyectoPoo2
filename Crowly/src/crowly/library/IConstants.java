@@ -11,9 +11,15 @@ public interface IConstants {
 	public final String MCS_URL = "https://westus.api.cognitive.microsoft.com/video/v1.0/detectmotion?sensitivityLevel=low&mergeTimeThreshold=1.8";
 	
 	public final String[] LISTA_VIDEOS = {
-			"http://gdurl.com/Kh-x" //3PM #1
-			//"https://1drv.ms/v/s!AumflabFBeKkcBwfi9eXNgbr7ZE", //3PM #2
-			//"https://www.dropbox.com/s/vgnl8dhxee14c5x/3PM_3.MOV?dl=0"  //3PM #3
+			"http://gdurl.com/AoXV", //9AM #1
+			"http://gdurl.com/dOQg", //9AM #2
+			"http://gdurl.com/DZB1", //9AM #3
+			"http://gdurl.com/pwnD", //12MD #1
+			"http://gdurl.com/8fLYz", //12MD #2
+			"http://gdurl.com/8RgJ", //12MD #3
+			"http://gdurl.com/AZrh", //3PM #1
+			"http://gdurl.com/Kh-x", //3PM #2
+			"http://gdurl.com/tdju"  //3PM #3
 	};
 	
 	public final String JSON_FILENAME = "video@@VIDEONUMBER@@.json";
@@ -36,15 +42,16 @@ public interface IConstants {
 
       +"function drawChart() {"
         +"var data = google.visualization.arrayToDataTable(["
-          +"['Hora', 'Personas'],"
-          +"['9 AM', @@9AM@@],"
-          +"['12 MD', @@12MD@@],"
-          +"['3 PM', @@3PM@@]"
+          +"['Minute', '9 AM', '12 MD', '3 PM'],"
+          +"[ '5',      @@0@@,  @@3@@,   @@6@@],"
+          +"[ '10',     @@1@@,  @@4@@,   @@7@@],"
+          +"[ '15',     @@2@@,  @@5@@,   @@8@@]"
         +"]);"
 
         +"var options = {"
           +"chart: {"
-            +"title: 'Crowly'"
+            +"title: 'Crowly',"
+            +"legend: { position: 'bottom' }"
           +"},"
           +"bars: 'horizontal'"
         +"};"
@@ -70,17 +77,17 @@ public interface IConstants {
 
       +"function drawChart() {"
         +"var data = google.visualization.arrayToDataTable(["
-          +"['Hour', 'People'],"
-          +"[ 9,      @@9AM@@],"
-          +"[ 12,      @@12MD@@],"
-          +"[ 15,     @@3PM@@]"
+          +"['Minute', '9 AM', '12 MD', '3 PM'],"
+          +"[ 5,      @@0@@,  @@3@@,   @@6@@],"
+          +"[ 10,     @@1@@,  @@4@@,   @@7@@],"
+          +"[ 15,     @@2@@,  @@5@@,   @@8@@]"
         +"]);"
 
         +"var options = {"
           +"title: 'Crowly',"
-          +"hAxis: {title: 'Hour', minValue: 9, maxValue: 15},"
+          +"hAxis: {title: 'Minutes', minValue: 0, maxValue: 15},"
           +"vAxis: {title: 'People', minValue: 0, maxValue: 30},"
-          +"legend: 'none'"
+          +"legend: { position: 'bottom' }"
         +"};"
 
         +"var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));"
@@ -104,14 +111,16 @@ public interface IConstants {
 
       +"function drawChart() {"
         +"var data = google.visualization.arrayToDataTable(["
-          +"['Hour', 'People'],"
-          +"['9 AM',  @@9AM@@],"
-          +"['12 MD',  @@12MD@@],"
-          +"['3 PM',  @@3PM@@]"
+          +"['Minute', '9 AM', '12 MD', '3 PM'],"
+          +"[ '5',      @@0@@,  @@3@@,   @@6@@],"
+          +"[ '10',     @@1@@,  @@4@@,   @@7@@],"
+          +"[ '15',     @@2@@,  @@5@@,   @@8@@]"
         +"]);"
 
         +"var options = {"
           +"title: 'Crowly',"
+          +"hAxis: {title: 'Minutes', minValue: 5, maxValue: 15},"
+          +"vAxis: {title: 'People', minValue: 0, maxValue: 30},"
           +"legend: { position: 'bottom' }"
         +"};"
 

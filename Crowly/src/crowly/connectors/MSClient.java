@@ -8,12 +8,7 @@ import crowly.library.*;
 
 public class MSClient implements IConstants
 {
-	private ArrayList<Cuerpo> Cuerpos;
 	private ArrayList<VideoResponse> VideosPendientes;
-	
-	public ArrayList<Cuerpo> getCuerpos() {
-		return Cuerpos;
-	}
 
 	public ArrayList<VideoResponse> getVideosPendientes() {
 		return VideosPendientes;
@@ -21,7 +16,6 @@ public class MSClient implements IConstants
 	
 	public MSClient()
 	{
-		Cuerpos = new ArrayList<Cuerpo>();
 		VideosPendientes = new ArrayList<VideoResponse>();
 	}
 	
